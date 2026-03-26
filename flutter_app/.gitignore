@@ -1,0 +1,59 @@
+# Flutter
+.dart_tool/
+.packages
+build/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# DON'T ignore pubspec.lock for apps — it ensures consistent builds
+# pubspec.lock  ← removed
+
+HOSPITAL_ALERT_IMPLEMENTATION.md
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment — KEEP THIS, never push .env
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Supabase
+supabase/.temp/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivep
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Android
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/**/gradle-wrapper.jar
+
+# Dart
+*.dart_snapshot
+
+# Coverage
+coverage/

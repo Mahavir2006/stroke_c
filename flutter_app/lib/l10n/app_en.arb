@@ -1,0 +1,469 @@
+{
+  "@@locale": "en",
+
+  "appName": "Stroke Mitra",
+  "appTagline": "Detect Stroke Early. Save Lives.",
+
+  "common_startScreening": "Start Screening",
+  "common_learnMore": "Learn More",
+  "common_tryAgain": "Try Again",
+  "common_save": "Save",
+  "common_cancel": "Cancel",
+  "common_retry": "Retry",
+  "common_back": "Back",
+  "common_next": "Next",
+  "common_done": "Done",
+  "common_saveAndContinue": "Save & Continue",
+  "common_testAgain": "Test Again",
+  "common_recordAgain": "Record Again",
+  "common_startTest": "Start Test",
+  "common_stopEarly": "Stop Early",
+  "common_resultsSaved": "Results saved.",
+  "common_right": "Right",
+  "common_left": "Left",
+
+  "nav_home": "Home",
+  "nav_face": "Face",
+  "nav_voice": "Voice",
+  "nav_motion": "Motion",
+  "nav_tap": "Tap",
+
+  "menu_profile": "Profile",
+  "menu_lightMode": "Light Mode",
+  "menu_darkMode": "Dark Mode",
+  "menu_medicalReports": "Medical Reports",
+
+  "dashboard_greetingMorning": "Good morning",
+  "dashboard_greetingAfternoon": "Good afternoon",
+  "dashboard_greetingEvening": "Good evening",
+  "dashboard_greetingWithName": "{greeting}, {name}",
+  "@dashboard_greetingWithName": {
+    "placeholders": {
+      "greeting": { "type": "String" },
+      "name": { "type": "String" }
+    }
+  },
+  "dashboard_readyCheck": "Ready for your daily check?",
+  "dashboard_lastCheck": "Last Check",
+  "dashboard_status": "Status",
+  "dashboard_streak": "Streak",
+  "dashboard_allClear": "All Clear",
+  "dashboard_today": "Today",
+  "dashboard_days": "{count} days",
+  "@dashboard_days": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboard_screeningTests": "SCREENING TESTS",
+  "dashboard_startFullCheckup": "Start Full Check-up",
+  "dashboard_allTestsOneSession": "All 4 tests in one session",
+  "dashboard_faceAnalysis": "Face Analysis",
+  "dashboard_detectFacialDrooping": "Detect facial drooping",
+  "dashboard_voiceCheck": "Voice Check",
+  "dashboard_analyzeSpeech": "Analyze speech clarity",
+  "dashboard_motionTest": "Motion Test",
+  "dashboard_assessArmStability": "Assess arm stability",
+  "dashboard_tapTest": "Tap Test",
+  "dashboard_fingerCoordination": "Finger coordination",
+
+  "face_title": "Face Analysis",
+  "face_stepBaseline": "STEP 1 — CAPTURE BASELINE PHOTO",
+  "face_stepTest": "STEP 2 — CAPTURE TEST PHOTO",
+  "face_stepResult": "STEP 3 — RESULT",
+  "face_baselineInstruction": "Capture your baseline photo with a neutral expression.",
+  "face_testInstruction": "Now capture a test photo to compare against your baseline.",
+  "face_startingCamera": "Starting camera...",
+  "face_alignFace": "Align face inside the oval",
+  "face_captureBaseline": "Capture Baseline",
+  "face_captureTestPhoto": "Capture Test Photo",
+  "face_faceDetected": "Face detected",
+  "face_ovalAligned": "Oval aligned",
+  "face_poseValid": "Pose valid",
+  "face_lightingOk": "Lighting OK",
+  "face_processingBaseline": "Processing baseline...",
+  "face_analyzingSymmetry": "Analyzing symmetry...",
+  "face_serverWarmup": "This may take up to 2 minutes if the server is warming up.",
+  "face_normalResult": "No significant asymmetry detected. Facial symmetry appears normal.",
+  "face_abnormalResult": "Potential facial asymmetry detected. Please consult a medical professional promptly.",
+  "face_stepBaseline_label": "Baseline",
+  "face_stepTest_label": "Test Photo",
+  "face_stepResult_label": "Result",
+  "face_cameraBlocked": "Camera blocked.\n\nClick the camera/lock icon in your browser address bar → Allow → then tap Retry.",
+  "face_captureFailed": "Failed to capture: {error}",
+  "@face_captureFailed": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "voice_title": "Voice Check",
+  "voice_readSentence": "Read the following sentence clearly:",
+  "voice_startRecording": "Start Recording",
+  "voice_stopRecording": "Stop Recording",
+  "voice_recordingComplete": "Recording complete ({duration}s)",
+  "@voice_recordingComplete": {
+    "placeholders": {
+      "duration": { "type": "String" }
+    }
+  },
+  "voice_playRecording": "Play Recording",
+  "voice_analyseSpeech": "Analyse Speech",
+  "voice_analysing": "Analysing your speech...",
+  "voice_analysingWait": "This may take up to 2 minutes on first use.",
+  "voice_slurringScore": "Slurring Score",
+  "voice_riskTier": "Risk Tier",
+  "voice_riskScore": "Risk Score",
+  "voice_confidence": "Confidence",
+  "voice_acousticSummary": "Acoustic Summary",
+  "voice_speakingRate": "Speaking Rate",
+  "voice_pitchMean": "Pitch Mean",
+  "voice_pitchVariability": "Pitch Variability",
+  "voice_pauseRatio": "Pause Ratio",
+  "voice_voicingRatio": "Voicing Ratio",
+  "voice_severe": "Significant speech impairment detected. Seek medical attention immediately.",
+  "voice_moderate": "Notable speech irregularities detected. Medical consultation recommended.",
+  "voice_mild": "Slight speech irregularities detected. Consider retesting or monitoring.",
+  "voice_normal": "Speech patterns are within normal range. No significant slurring detected.",
+  "voice_processedIn": "Processed in {seconds}s",
+  "@voice_processedIn": {
+    "placeholders": {
+      "seconds": { "type": "String" }
+    }
+  },
+
+  "motion_title": "Arms Test",
+  "motion_instruction": "Hold your phone flat with both arms extended. Keep it as steady as possible for {seconds} seconds.",
+  "@motion_instruction": {
+    "placeholders": {
+      "seconds": { "type": "int" }
+    }
+  },
+  "motion_xTilt": "X Tilt",
+  "motion_yTilt": "Y Tilt",
+  "motion_timeLeft": "Time Left",
+  "motion_secondsRemaining": "{seconds} seconds remaining",
+  "@motion_secondsRemaining": {
+    "placeholders": {
+      "seconds": { "type": "int" }
+    }
+  },
+  "motion_tiltVariance": "Tilt Variance",
+  "motion_driftScore": "Drift Score",
+  "motion_samples": "Samples",
+  "motion_abnormal": "Significant arm drift detected. Seek medical attention immediately.",
+  "motion_borderline": "Some instability detected. Retest recommended.",
+  "motion_normal": "Arm stability is within normal range.",
+
+  "tap_title": "Tap Test",
+  "tap_rightHand": "Right Hand",
+  "tap_leftHand": "Left Hand",
+  "tap_rightHandCaps": "RIGHT HAND",
+  "tap_leftHandCaps": "LEFT HAND",
+  "tap_rightInstruction": "Use your RIGHT hand to tap the moving button as many times as you can in 20 seconds.",
+  "tap_leftInstruction": "Use your LEFT hand to tap the moving button as many times as you can in 20 seconds.",
+  "tap_startRightTest": "Start Right Hand Test",
+  "tap_startLeftTest": "Start Left Hand Test",
+  "tap_taps": "Taps: {count}",
+  "@tap_taps": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "tap_tapsCount": "{count} taps",
+  "@tap_tapsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "tap_rightDone": "Right hand done!",
+  "tap_switchLeft": "Now switch to your LEFT hand.",
+  "tap_startingLeft": "Starting left hand test in {seconds} second{suffix}…",
+  "@tap_startingLeft": {
+    "placeholders": {
+      "seconds": { "type": "int" },
+      "suffix": { "type": "String" }
+    }
+  },
+  "tap_asymmetryAnalysis": "Asymmetry Analysis",
+  "tap_asymmetryIndex": "Asymmetry Index",
+  "tap_assessment": "Assessment",
+  "tap_lateralisedDeficit": "Lateralised Deficit Detected",
+
+  "emergency_title": "EMERGENCY",
+  "emergency_callPrompt": "Seek immediate medical attention. Tap to call {number}.",
+  "@emergency_callPrompt": {
+    "placeholders": {
+      "number": { "type": "String" }
+    }
+  },
+  "emergency_suspectStroke": "If you suspect a stroke, call emergency services immediately.",
+  "emergency_numbers": "Emergency: {emergency} | Ambulance: {ambulance}",
+  "@emergency_numbers": {
+    "placeholders": {
+      "emergency": { "type": "String" },
+      "ambulance": { "type": "String" }
+    }
+  },
+
+  "disclaimer_title": "Prototype Screening Tool",
+  "disclaimer_body": "This application is for demonstration and research purposes only. It is not a medical device and does not provide a diagnosis. If you suspect a stroke, call emergency services immediately.",
+
+  "auth_welcomeBack": "Welcome Back",
+  "auth_signInSubtitle": "Sign in to access your screening results",
+  "auth_emailLabel": "Email Address",
+  "auth_passwordLabel": "Password",
+  "auth_fullNameLabel": "Full Name",
+  "auth_forgotPassword": "Forgot Password?",
+  "auth_signIn": "Sign In",
+  "auth_signUp": "Sign Up",
+  "auth_createAccount": "Create Account",
+  "auth_noAccount": "Don't have an account?",
+  "auth_hasAccount": "Already have an account?",
+  "auth_joinStrokeMitra": "Join Stroke Mitra",
+  "auth_signUpSubtitle": "Create an account to securely store your screening results",
+  "auth_validEmail": "Please enter a valid email",
+  "auth_validPassword": "Password must be at least 6 characters",
+  "auth_validName": "Please enter your full name",
+  "auth_resetPassword": "Reset Password",
+  "auth_resetSubtitle": "Enter your email and we'll send you a link to reset your password",
+  "auth_sendResetLink": "Send Reset Link",
+  "auth_checkEmail": "Check Your Email",
+  "auth_resetLinkSent": "We sent a password reset link to\n{email}",
+  "@auth_resetLinkSent": {
+    "placeholders": {
+      "email": { "type": "String" }
+    }
+  },
+  "auth_backToLogin": "Back to Login",
+
+  "profile_title": "My Profile",
+  "profile_memberSince": "Member Since",
+  "profile_testsTaken": "Tests Taken",
+  "profile_lastCheck": "Last Check",
+  "profile_baselinePhoto": "Baseline Photo",
+  "profile_baselineSubtitle": "Used as reference for face symmetry analysis.",
+  "profile_noBaseline": "No baseline photo yet",
+  "profile_captureBaseline": "Capture one from the Face Analysis page.",
+  "profile_appearance": "Appearance",
+  "profile_appearanceSubtitle": "Choose your preferred theme.",
+  "profile_language": "Language",
+  "profile_languageSubtitle": "Choose your preferred language.",
+  "profile_account": "Account",
+  "profile_signOut": "Sign Out",
+  "profile_privacy": "Your data is securely stored and private to you.",
+  "profile_notFound": "Profile not found",
+  "profile_errorLoading": "Error loading profile: {error}",
+  "@profile_errorLoading": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "profile_themeSystem": "System",
+  "profile_themeLight": "Light",
+  "profile_themeDark": "Dark",
+
+  "checkup_fullCheckup": "Full Check-up",
+  "checkup_exitTitle": "Exit Full Check-up?",
+  "checkup_exitMessage": "Your progress will be lost. Are you sure you want to exit?",
+  "checkup_stay": "Stay",
+  "checkup_exit": "Exit",
+  "checkup_exitTooltip": "Exit check-up",
+
+  "checkup_reportTitle": "Check-up Report",
+  "checkup_noCheckupFound": "No completed check-up found.",
+  "checkup_goHome": "Go Home",
+  "checkup_downloadPdf": "Download PDF Report",
+  "checkup_backToHome": "Back to Home",
+  "checkup_faceAnalysis": "Face Analysis",
+  "checkup_voiceCheck": "Voice Check",
+  "checkup_motionTest": "Motion Test",
+  "checkup_tapTest": "Tap Test",
+  "checkup_overallRisk": "Overall: {risk}",
+  "@checkup_overallRisk": {
+    "placeholders": {
+      "risk": { "type": "String" }
+    }
+  },
+  "checkup_riskAbnormalMessage": "One or more tests indicate potential stroke signs. Please seek medical attention immediately.",
+  "checkup_riskBorderlineMessage": "Some tests show borderline results. Consider consulting a healthcare provider.",
+  "checkup_riskNormalMessage": "All tests are within normal range. No significant stroke indicators detected.",
+  "checkup_fullCheckupReport": "Full Check-up Report",
+  "checkup_overallRiskLabel": "Overall Risk: ",
+  "checkup_noRiskFactors": "No risk factors detected",
+  "checkup_detectedConditions": "Detected Conditions",
+  "checkup_stepFace": "Face",
+  "checkup_stepVoice": "Voice",
+  "checkup_stepMotion": "Motion",
+  "checkup_stepTap": "Tap",
+
+  "medicalReport_title": "Medical Reports",
+  "medicalReport_uploadTitle": "Upload Medical Report",
+  "medicalReport_supportedFormat": "Supported format: PDF · Max 10MB",
+  "medicalReport_choosePdf": "Choose PDF File",
+  "medicalReport_uploading": "Uploading...",
+  "medicalReport_fileSizeLimit": "File exceeds 10MB limit.",
+  "medicalReport_couldNotOpenPdf": "Could not open PDF.",
+  "medicalReport_failedPdfLink": "Failed to get PDF link: {error}",
+  "@medicalReport_failedPdfLink": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "medicalReport_analyzing": "Analyzing report...",
+  "medicalReport_extracting": "Extracting text and detecting risk factors",
+  "medicalReport_pastReports": "Past Reports",
+  "medicalReport_noReports": "No reports yet",
+  "medicalReport_uploadPrompt": "Upload a PDF medical report to get started.",
+  "medicalReport_viewPdf": "View PDF",
+
+  "landing_heroTitle1": "Detect Stroke Early.",
+  "landing_heroTitle2": "Save Lives.",
+  "landing_heroSubtitle": "Stroke Mitra uses your device's camera, microphone, and motion sensors to check for early warning signs of stroke — privately, in under 60 seconds.",
+  "landing_trustPrivate": "100% Private",
+  "landing_trustFast": "Under 60s",
+  "landing_trustNoData": "No Data Stored",
+  "landing_scrollDown": "Scroll down",
+  "landing_aiPowered": "AI-Powered Screening",
+
+  "landing_aboutTag": "About",
+  "landing_whatIsTitle": "What is Stroke Mitra?",
+  "landing_whatIsSubtitle": "Stroke Mitra is an AI-powered screening tool that helps identify early warning signs of stroke using your smartphone's built-in sensors — no special equipment needed.",
+  "landing_clinicallyInformed": "Clinically Informed",
+  "landing_clinicallyDesc": "Built on the FAST (Face, Arms, Speech, Time) framework used by medical professionals worldwide.",
+  "landing_deviceNative": "Device-Native AI",
+  "landing_deviceDesc": "Runs entirely on your device. No cloud uploads, no data retention. Your health data stays yours.",
+  "landing_forEveryone": "For Everyone",
+  "landing_forEveryoneDesc": "Designed for patients, caregivers, and healthcare workers. No medical training required.",
+  "landing_disclaimerPrefix": "Medical Disclaimer: ",
+  "landing_disclaimerText": "Stroke Mitra is a screening aid, not a diagnostic tool. Always call emergency services (112) immediately if you suspect a stroke.",
+
+  "landing_howItWorksTag": "HOW IT WORKS",
+  "landing_howItWorksTitle": "Three Simple Steps",
+  "landing_howItWorksSubtitle": "Stroke Mitra walks you through a quick, guided screening — no medical knowledge needed.",
+  "landing_step1Title": "Open & Start",
+  "landing_step1Desc": "Launch the app and tap 'Start Screening'. No registration or login required.",
+  "landing_step1Detail1": "Works on any modern smartphone",
+  "landing_step1Detail2": "No download needed",
+  "landing_step2Title": "Complete 3 Quick Tests",
+  "landing_step2Desc": "Follow the guided prompts for face, speech, and arm movement analysis.",
+  "landing_step2Detail1": "Face symmetry via camera",
+  "landing_step2Detail2": "Speech clarity via microphone",
+  "landing_step3Title": "Get Instant Results",
+  "landing_step3Desc": "View your screening summary with clear risk indicators and next steps.",
+  "landing_step3Detail1": "Color-coded risk levels",
+  "landing_step3Detail2": "Emergency guidance if needed",
+
+  "landing_featuresTag": "FEATURES",
+  "landing_featuresTitle": "Built for Speed. Designed for Trust.",
+  "landing_featuresSubtitle": "Every feature is purpose-built to deliver accurate, fast, and private stroke screening.",
+  "landing_feat1Title": "Camera-Based Facial Analysis",
+  "landing_feat1Desc": "Real-time AI detection of facial asymmetry using your front camera. No special hardware needed.",
+  "landing_feat1Tag": "Computer Vision",
+  "landing_feat2Title": "Voice Recording & Speech Detection",
+  "landing_feat2Desc": "Advanced NLP models analyze your speech for slurring, word-finding difficulty, and incoherence.",
+  "landing_feat2Tag": "NLP + Audio AI",
+  "landing_feat3Title": "Motion & Coordination Sensing",
+  "landing_feat3Desc": "Gyroscope and accelerometer data assess arm drift and coordination — key neurological indicators.",
+  "landing_feat3Tag": "Sensor Fusion",
+  "landing_feat4Title": "Results in Under 60 Seconds",
+  "landing_feat4Desc": "The entire screening process takes less than a minute, giving you fast answers when every second counts.",
+  "landing_feat4Tag": "Real-Time",
+  "landing_feat5Title": "Fully Private & Secure",
+  "landing_feat5Desc": "All processing happens on your device. No video, audio, or personal data is ever uploaded or stored.",
+  "landing_feat5Tag": "On-Device AI",
+  "landing_feat6Title": "Clinically Guided Framework",
+  "landing_feat6Desc": "Based on the medically validated FAST protocol, trusted by emergency responders globally.",
+  "landing_feat6Tag": "Evidence-Based",
+
+  "landing_statsTag": "THE STAKES",
+  "landing_statsTitle": "Why Every Second Counts",
+  "landing_statsSubtitle": "Stroke is the second leading cause of death worldwide. Early detection dramatically changes outcomes.",
+  "landing_stat1Label": "Strokes occur globally each year",
+  "landing_stat2Label": "Of strokes are preventable with early action",
+  "landing_stat3Label": "Brain cells lost every minute untreated",
+  "landing_stat4Label": "Better outcomes with treatment in first hour",
+  "landing_fastRemember": "Remember ",
+  "landing_fastTitle": "F.A.S.T.",
+  "landing_fastF": "Face",
+  "landing_fastFDesc": "Is one side drooping?",
+  "landing_fastA": "Arms",
+  "landing_fastADesc": "Can they raise both arms?",
+  "landing_fastS": "Speech",
+  "landing_fastSDesc": "Is speech slurred or strange?",
+  "landing_fastT": "Time",
+  "landing_fastTDesc": "Call 112 immediately!",
+
+  "landing_ctaTitle1": "Don't Wait. ",
+  "landing_ctaTitle2": "Act Now.",
+  "landing_ctaSubtitle": "If you or someone near you shows stroke symptoms, every second matters. Start the Stroke Mitra check right now — it could save a life.",
+  "landing_ctaStart": "Start Stroke Check Now",
+  "landing_ctaEmergency": "Call 112 Emergency",
+  "landing_ctaFree": "Free to use · No registration · Works on any modern smartphone",
+
+  "landing_footerTagline": "Early detection. Better outcomes.\nEvery second counts.",
+  "landing_footerScreening": "Screening",
+  "landing_footerLearn": "Learn",
+  "landing_footerEmergency": "Emergency",
+  "landing_footerWhatIs": "What is Stroke Mitra",
+  "landing_footerHowItWorks": "How It Works",
+  "landing_footerWhyEarly": "Why Early Detection",
+  "landing_footerCall112": "Call 112",
+  "landing_footerAmbulance108": "Ambulance 108",
+  "landing_footerCopyright": "© 2025 Stroke Mitra. Built with care for public health awareness.",
+  "landing_footerDisclaimer": "This tool is for screening purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.",
+
+  "landing_nav_checkSymptoms": "Check Symptoms",
+  "landing_footer_faceAnalysis": "Face Analysis",
+  "landing_footer_speechCheck": "Speech Check",
+  "landing_footer_motionTest": "Motion Test",
+  "motion_secondsRemainingLabel": "{seconds} seconds remaining",
+  "@motion_secondsRemainingLabel": {
+    "placeholders": {
+      "seconds": { "type": "int" }
+    }
+  },
+  "face_retry": "Retry",
+  "medicalReport_noRiskFactors": "No risk factors detected",
+  "medicalReport_detectedConditions": "Detected Conditions",
+
+  "checkup_continueToVoice": "Continue to Voice Check",
+  "checkup_continueToMotion": "Continue to Motion Test",
+  "checkup_continueToTap": "Continue to Tap Test",
+
+  "sos_emergencyTitle": "Emergency SOS",
+  "sos_emergencySubtitle": "Abnormal results detected. If you or someone nearby is experiencing stroke symptoms, call emergency services immediately.",
+  "sos_callAmbulance": "Call Ambulance (108)",
+  "sos_callEmergency": "Call Emergency (112)",
+  "sos_couldNotCall": "Could not place call",
+
+  "hospital_sendToNearby": "Send to Nearby Hospital",
+  "hospital_selectHospital": "Select Hospital",
+  "hospital_finding": "Finding nearest hospital...",
+  "hospital_loading": "Loading hospitals...",
+  "hospital_confirmTitle": "Send Alert to Hospital?",
+  "hospital_confirmMessage": "Sending to: {name} ({distance} km away). Confirm?",
+  "@hospital_confirmMessage": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "distance": { "type": "String" }
+    }
+  },
+  "hospital_confirm": "Send Alert",
+  "hospital_cancel": "Cancel",
+  "hospital_sending": "Sending alert...",
+  "hospital_sent": "Alert sent successfully to {name}",
+  "@hospital_sent": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "hospital_failed": "Failed to send alert: {error}",
+  "@hospital_failed": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "hospital_noNearby": "No hospitals found within 50km. Showing 3 nearest hospitals.",
+  "hospital_locationError": "Could not get your location. Please enable location services."
+}

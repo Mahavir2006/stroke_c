@@ -1,0 +1,118 @@
+# Implementation Plan
+
+- [ ] 1. Write bug condition exploration test
+  - **Property 1: Bug Condition** - Duplicate Files and Platform-Specific Code Detection
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists
+  - **Scoped PBT Approach**: Verify concrete failing cases - duplicate files exist and dart:html import causes mobile compilation failure
+  - Test implementation details from Bug Condition in design:
+    - Verify both `lib/features/medical_report/medical_report_screen.dart` AND `lib/features/medical_reports/medical_report_screen.dart` exist
+    - Verify `lib/features/medical_reports/medical_report_screen.dart` imports `dart:html`
+    - Verify `lib/app/router.dart` imports both medical report screen files (causing import ambiguity)
+    - Attempt Android/iOS compilation and verify it fails with "dart:html not found" error
+  - The test assertions should match the Expected Behavior Properties from design (single cross-platform implementation)
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves the bug exists)
+  - Document counterexamples found to understand root cause:
+    - List both file paths that exist
+    - Show the dart:html import line
+    - Show the duplicate router imports
+    - Capture the compilation error message
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 1.1, 1.2, 1.3, 1.4_
+
+- [ ] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Medical Report Functionality Preservation
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-buggy inputs (medical report feature on web platform where it currently works)
+  - Write property-based tests capturing observed behavior patterns from Preservation Requirements in design:
+    - PDF file upload functionality works correctly
+    - Medical report analysis produces risk assessment results
+    - Report history displays past reports with risk levels
+    - PDF viewing via signed URLs works correctly
+    - UI/UX remains visually identical
+    - Navigation to medical report screen works correctly
+  - Property-based testing generates many test cases for stronger guarantees
+  - Run tests on UNFIXED code (on web platform where feature works)
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [ ] 3. Fix for duplicate files and platform-specific code
+
+  - [ ] 3.1 Remove duplicate web-only implementation
+    - Delete the entire file `lib/features/medical_reports/medical_report_screen.dart`
+    - This file uses `dart:html` which is web-only and causes mobile compilation failures
+    - The cross-platform implementation already exists in `lib/features/medical_report/medical_report_screen.dart` using `file_picker` package
+    - _Bug_Condition: isBugCondition(codebase) = (EXISTS "lib/features/medical_report/medical_report_screen.dart" AND EXISTS "lib/features/medical_reports/medical_report_screen.dart") OR ("lib/features/medical_reports/medical_report_screen.dart" IMPORTS "dart:html")_
+    - _Expected_Behavior: expectedBehavior(codebase) = Single cross-platform MedicalReportScreen implementation using file_picker package, compiles successfully on Web/Android/iOS_
+    - _Preservation: All medical report functionality (upload, analysis, history, PDF viewing) must continue working exactly as before on all platforms_
+    - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.2_
+
+  - [ ] 3.2 Update router imports
+    - Open `lib/app/router.dart`
+    - Remove the duplicate import line: `import '../features/medical_reports/medical_report_screen.dart';` (currently at line 18)
+    - Keep the correct import line: `import '../features/medical_report/medical_report_screen.dart';` (currently at line 12)
+    - Verify both route definitions (`/medical-reports` at line 60 and `/medical-report` at line 95) point to the same MedicalReportScreen class from the correct import
+    - _Bug_Condition: router.dart imports both medical report screen files causing import ambiguity and conflicting class definitions_
+    - _Expected_Behavior: Router imports from single correct file location, no import conflicts_
+    - _Preservation: Navigation to medical report screen continues to work from dashboard and direct URL access_
+    - _Requirements: 1.4, 2.5, 3.5_
+
+  - [ ] 3.3 Verify pubspec.yaml dependencies
+    - Open `flutter_app/pubspec.yaml`
+    - Confirm that `file_picker: ^8.1.2` is present in dependencies (should be at line 52)
+    - No changes needed - just verification that cross-platform package is available
+    - _Expected_Behavior: Cross-platform file_picker package is available for use on Web, Android, and iOS_
+    - _Requirements: 2.2_
+
+  - [ ] 3.4 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - Single Cross-Platform Implementation
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - Verify test now passes with these assertions:
+      - Only one MedicalReportScreen file exists at `lib/features/medical_report/medical_report_screen.dart`
+      - No files in medical report feature import `dart:html`
+      - `lib/app/router.dart` imports from single correct location
+      - Android/iOS compilation succeeds without "dart:html not found" errors
+      - Web compilation still succeeds
+    - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
+
+  - [ ] 3.5 Verify preservation tests still pass
+    - **Property 2: Preservation** - Medical Report Functionality
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - Test on both Web and mobile platforms (Android/iOS if available)
+    - Verify all preserved behaviors:
+      - PDF file upload works on all platforms (browser picker on web, native picker on mobile)
+      - Medical report analysis produces correct risk assessment results
+      - Report history displays correctly with all past reports
+      - PDF viewing via signed URLs works correctly
+      - UI/UX remains visually identical (layout, styling, animations)
+      - Navigation to/from medical report screen works correctly
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all tests still pass after fix (no regressions introduced)
+    - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [ ] 4. Checkpoint - Ensure all tests pass
+  - Verify compilation succeeds for all target platforms:
+    - Run `flutter build web` - should succeed
+    - Run `flutter build apk` - should succeed (previously failed)
+    - Run `flutter build ios` - should succeed if on macOS (previously failed)
+  - Verify structural fixes:
+    - Confirm only one MedicalReportScreen file exists
+    - Confirm no dart:html imports in medical report feature
+    - Confirm router has single import for MedicalReportScreen
+  - Verify functional preservation:
+    - Test medical report upload on Web (Chrome)
+    - Test medical report upload on Android (emulator or device)
+    - Test medical report upload on iOS (simulator or device, if available)
+    - Verify analysis results display correctly
+    - Verify history displays correctly
+    - Verify PDF viewing works correctly
+  - Ensure all tests pass, ask the user if questions arise

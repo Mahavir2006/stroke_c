@@ -1,0 +1,182 @@
+#name: stroke_mitra
+#description: "Stroke Mitra — AI-Powered Stroke Screening App. Detect stroke early, save lives."
+#publish_to: 'none'
+#version: 1.0.0+1
+#
+#environment:
+#  sdk: ">=3.2.0 <4.0.0"
+#  flutter: ">=3.16.0"
+#
+#dependencies:
+#  flutter:
+#    sdk: flutter
+#  flutter_localizations:
+#    sdk: flutter
+#  intl: ^0.20.2
+#
+#  # Supabase
+#  supabase_flutter: ^2.3.0
+#
+#  # Navigation
+#  go_router: ^13.0.0
+#
+#  # State management
+#  flutter_riverpod: ^2.4.9
+#
+#  # Animations
+#  flutter_animate: ^4.3.0
+#
+#  # Camera & Face Detection
+#  camera: ^0.12.0
+#
+#  # Motion sensing
+#  sensors_plus: ^4.0.2
+#
+#  # Charts
+#  fl_chart: ^0.68.0
+#
+#  # Audio recording
+#  record: 5.1.1
+#  audioplayers: ^5.2.1
+#  path_provider: ^2.1.2
+#
+#  # HTTP & networking
+#  http: ^1.2.0
+#  http_parser: ^4.1.0
+#
+#  # UI utilities
+#  cached_network_image: ^3.3.1
+#  url_launcher: ^6.2.2
+#  google_fonts: ^6.1.0
+#  shimmer: ^3.0.0
+#  dotted_border: ^2.1.0
+#  geolocator: ^10.1.0
+#
+#  # Local storage
+#  shared_preferences: ^2.2.2
+#
+#  # Environment
+#  flutter_dotenv: ^5.1.0
+#
+#  # PDF handling
+#  file_picker: ^8.1.2
+#  syncfusion_flutter_pdf: ^33.1.44
+#  pdf: ^3.10.8
+#  printing: ^5.12.0
+#  google_mlkit_face_detection: 0.11.0
+#
+#dev_dependencies:
+#  flutter_test:
+#    sdk: flutter
+#  flutter_lints: ^3.0.1
+#
+#dependency_overrides:
+##  record_linux: ^0.8.0
+##  record: 5.1.1
+#  record_linux:
+#    git:
+#      url: https://github.com/llfbandit/record.git
+#      path: record_linux
+#      ref: master
+#  record_platform_interface: ^1.4.0
+#
+#
+#flutter:
+#  generate: true
+#  uses-material-design: true
+#  assets:
+#    - assets/images/
+#    - .env
+
+
+name: stroke_mitra
+description: "Stroke Mitra — AI-Powered Stroke Screening App. Detect stroke early, save lives."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # Supabase
+  supabase_flutter: ^2.3.0
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # State management
+  flutter_riverpod: ^2.4.9
+
+  # Animations
+  flutter_animate: ^4.3.0
+
+  # Camera & Face Detection
+  # CHANGED: 0.12.x has known iOS build failures; 0.10.9+2 is stable on both platforms
+  camera: ^0.10.9+2
+
+  # Motion sensing
+  sensors_plus: ^4.0.2
+
+  # Charts
+  fl_chart: ^0.68.0
+
+  # Audio recording
+  record: 5.1.1
+  audioplayers: ^5.2.1
+  path_provider: ^2.1.2
+
+  # HTTP & networking
+  http: ^1.2.0
+  http_parser: ^4.1.0
+
+  # UI utilities
+  cached_network_image: ^3.3.1
+  url_launcher: ^6.2.2
+  google_fonts: ^6.1.0
+  shimmer: ^3.0.0
+  dotted_border: ^2.1.0
+  geolocator: ^10.1.0
+
+  # Local storage
+  shared_preferences: ^2.2.2
+
+  # Environment
+  flutter_dotenv: ^5.1.0
+
+  # PDF handling
+  file_picker: ^8.1.2
+  syncfusion_flutter_pdf: ^33.1.44
+  pdf: ^3.10.8
+  printing: ^5.12.0
+
+  # CHANGED: 0.11.0 has iOS linking issues; 0.9.0 is last fully stable iOS+Android version
+  google_mlkit_face_detection: 0.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+dependency_overrides:
+  record_linux:
+    git:
+      url: https://github.com/llfbandit/record.git
+      path: record_linux
+      ref: master
+  # CHANGED: bumped from ^1.4.0 to ^1.2.0 floor to avoid iOS pod conflict with record 5.1.1
+  record_platform_interface: ^1.2.0
+
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - .env
